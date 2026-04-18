@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopify Image Manager</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .product { margin-bottom: 40px; }
+        img { margin: 5px; border-radius: 8px; }
+    </style>
+</head>
+<body>
 
+<h1>🛍️ Shopify Image Dashboard</h1>
+
+{% for p in products %}
+<div class="product">
+    <h2>{{ p.title }}</h2>
+
+    <h3>📦 Immagini prodotto</h3>
+    {% for img in p.images %}
+        <img src="{{ img }}" width="120">
+    {% endfor %}
+
+    <h3>🖼️ Gallery</h3>
+    {% for img in p.gallery_images %}
+        <img src="{{ img }}" width="120">
+    {% endfor %}
+</div>
+{% endfor %}
+
+</body>
+</html>
